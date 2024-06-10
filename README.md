@@ -7,10 +7,10 @@ Gestión de Ingresos y Gastos Administra tus finanzas de forma sencilla, creado 
 **Tatiana Cabal**
 
 *[LinkedIn](https://www.linkedin.com/in/ingtatiana/)
-*[Portafolio Web](http://127.0.0.7:5500/index.html)
+*[FinanceTrackPro](http://127.0.0.7:5500/index.html)
 
 ## Ver ejemplo en vivo
-- [https://tatian04.github.io/Mi-portafolio/](https://tatian04.github.io/Mi-portafolio/)
+- [https://tatian04.github.io/FinanceTrackPro/]
 
 ## Instalación 
 Este proyecto no necesita instalación. Simplemente abre la carpeta o haz doble click en el .html
