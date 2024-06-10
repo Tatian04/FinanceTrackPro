@@ -1,0 +1,72 @@
+/* styles.css */
+
+body { /* Estilos generales para el cuerpo de la página*/
+    font-family: Arial, sans-serif; /*Fuente de texto*/
+    margin: 0;
+    padding: 0; /*Eliminar márgenes y rellenos predeterminados*/
+    background-color: #f4f4f9; /*Color de fondo*/
+    color: #333; /*Color de texto*/
+}
+
+header {/*Estilos para el encabezado*/
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50; /*Color de fondo para el encabezado*/
+    color: white; /*Color del texto del encabezado*/
+}
+
+#form-section, #history-section, #chart-section {  /*Estilos para las secciones principales*/
+    margin: 20px;
+    padding: 20px;
+    background: white; /*Fondo blanco*/
+    border-radius: 8px; /*Bordes redondeados*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*Sombra para dar profundidad*/
+}
+
+#form-section h2, #history-section h2, #chart-section h2 {
+    margin-bottom: 20px; /*Espacio debajo del título de cada sección*/
+}
+
+form { /*Estilos para el formulario*/
+    display: flex;
+    flex-direction: column; /*Disposición vertical de los elementos del formulario*/
+}
+
+form label, form input, form select, form button {
+    margin: 10px 0; /*Espaciado entre los elementos del formulario*/
+}
+
+form button { /* Estilos del botón para agregar transacciones*/
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* Estilos del botón para agregar transacciones*/
+form button:hover {
+    background-color: #45a049; /*Cambio de color para el mouse sobre el botón*/
+}
+
+table { /*Estilos para la tabla de historial de transacciones*/
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /*Ajustar la tabla para q ocupe todo el ancho disponible y colapsa los bordes*/
+}
+
+table, th, td {
+    border: 1px solid #ddd; 
+}
+
+th, td {
+    padding: 8px;
+    text-align: left; /*Espaciado y alineación de textos en celdas*/
+}
+
+footer { /*Estilos para el pie de página*/
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white; /*Estilo similar al encabezado*/
+} 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Permite q la página sea responsiva al ajustar el ancho de la ventana-->
+    <title>Gestión de Ingresos y Gastos</title> <!--Título de la página q aparece en la pestaña -->
+    <link rel="stylesheet" href="styles.css"> <!--Enlace al archivo CSS para estilos-->
+</head>
+<body>
+    <div id="app"> <!--Este div es el contenedor principal que Vue.js gestionara-->
+        <header> <!--Encabezado de la aplicación-->
+            <h1>Gestión de Ingresos y Gastos</h1> <!--Título y descripción de la aplicación-->
+            <p>Administra tus finanzas de forma sencilla</p>
+        </header>
+
+        <section id="form-section"><!--Sección q contiene el formulario para registrar tansacciones-->
+            <h2>Registrar Transacción</h2>
+            <form @submit.prevent="addTransaction"> <!--El formulario usa la directiva @submit.prevent de Vue.js para evitar el comportamiento predeterminado del formulario y llama a la función addTransaction-->
+                <label for="type">Tipo:</label> <!--Etiqueta para el campo de tipo de transacción-->
+                <select v-model="newTransaction.type" required> <!--Select q se enlaza al modelo de datos newTransaction.type de Vue.js-->
+                    <option value="income">Ingreso</option>
+                    <option value="expense">Gasto</option> <!--Opciones para seleccionar entre ingreso y gasto-->
+                </select>
+
+                <label for="amount">Cantidad:</label> <!--Etiqueta para el campo de cantidad-->
+                <input type="number" v-model="newTransaction.amount" required min="0.01" step="0.01"> <!--Campo de entrada para la cantidad, enlazado a neTransaction.amount y con validación para valores positivos-->
+
+                <label for="description">Descripción:</label> <!--Etiqueta para el campo de la descripción -->
+                <input type="text" v-model="newTransaction.description" required> <!--Campo de entrada para la descripción de la transacción, enlazado a nerTransaction.descripción-->
+
+                <button type="submit">Agregar</button> <!--Botón para enviar el formulario-->
+            </form>
+        </section>
+
+        <section id="history-section"> <!--Sección que muestra el historial de transacciones-->
+            <h2>Historial de Transacciones</h2>
+            <table> <!--Tabla para mostrar las transacciones registradas-->
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Cantidad</th>
+                        <th>Descripción</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="transaction in transactions" :key="transaction.id"> <!--Fila de la tabla generada dinámicamente para cada transacción en el array trasactions-->
+                        <td>{{ transaction.type }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.description }}</td>
+                        <td>{{ transaction.date }}</td> <!--Cada celda muestra los datos de una transacción específica-->
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="chart-section"> <!--Sección que contiene la gráfica de seguimiento de gastos-->
+            <h2>Gráfica de Seguimiento</h2>
+            <canvas id="expenseChart"></canvas> <!--Lienzo para la gráfica de Charts.js-->
+        </section>
+
+        <footer> <!--Pie de página de la aplicación-->
+            <p>Desarrollado por [Tatiana Cabal]</p> <!--Información de la desarrolladora-->
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> <!--Inclusión de las bibliotecas Vue.js y Chart.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script> <!--Enlace al archivoJavaScript principal de la aplicación-->
+</body>
+</html>
